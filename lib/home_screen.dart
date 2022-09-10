@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gui_calc/components/buttons.dart';
 import 'package:gui_calc/constants.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var userInput = '';
   var ans = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
                         userInput.toString(),
@@ -33,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ans.toString(),
                         style:
                             const TextStyle(fontSize: 30, color: Colors.black),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -55,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           Buttons(
-                            title: '+/-',
+                            title: '+',
                             n: op,
                             t: op_text,
                             onPress: () {
@@ -114,11 +118,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           Buttons(
-                            title: 'X',
+                            title: ' * ',
                             n: op,
                             t: op_text,
                             onPress: () {
-                              userInput += ' x ';
+                              userInput += ' * ';
                               setState(() {});
                             },
                           ),
@@ -228,14 +232,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: 'DEL',
                             n: func,
                             t: func_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput =
+                                  userInput.substring(0, userInput.length - 1);
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '=',
                             n: func,
                             t: func_text,
                             onPress: () {
-                              userInput += ' = ';
+                              equalPress();
                               setState(() {});
                             },
                           ),
@@ -248,5 +256,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ));
+  }
+
+  void equalPress() {
+    Parser p = Parser();
+    Expression expression = p.parse(userInput);
+    ContextModel contextModel = ContextModel();
+
+    double eval = expression.evaluate(EvaluationType.REAL, contextModel);
+    ans = "= $eval";
   }
 }
