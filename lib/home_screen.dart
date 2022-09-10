@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffE9F8FF),
+        backgroundColor: bg,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -26,7 +26,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Text(
                         userInput.toString(),
-                        style: TextStyle(fontSize: 30, color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 30, color: Colors.black),
+                      ),
+                      Text(
+                        ans.toString(),
+                        style:
+                            const TextStyle(fontSize: 30, color: Colors.black),
                       )
                     ],
                   ),
@@ -42,25 +48,38 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: 'AC',
                             n: func,
                             t: func_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput = ' ';
+                              ans = '';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '+/-',
                             n: op,
                             t: op_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += " + ";
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '%',
                             n: op,
                             t: op_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += " % ";
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '/',
                             n: op,
                             t: op_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += " / ";
+                              setState(() {});
+                            },
                           ),
                         ],
                       ),
@@ -71,25 +90,37 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: '7',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '7';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '8',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '8';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '9',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '9';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: 'X',
                             n: op,
                             t: op_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += ' x ';
+                              setState(() {});
+                            },
                           ),
                         ],
                       ),
@@ -100,25 +131,37 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: '4',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '4';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '5',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '5';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '6',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '6';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '-',
                             n: op,
                             t: op_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += ' - ';
+                              setState(() {});
+                            },
                           ),
                         ],
                       ),
@@ -129,25 +172,37 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: '1',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '1';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '2',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '2';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '3',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '3';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '4',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '4';
+                              setState(() {});
+                            },
                           ),
                         ],
                       ),
@@ -164,7 +219,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: '.',
                             n: op,
                             t: op_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '.';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: 'DEL',
@@ -176,7 +234,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: '=',
                             n: func,
                             t: func_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += ' = ';
+                              setState(() {});
+                            },
                           ),
                         ],
                       )

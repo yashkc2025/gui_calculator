@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gui_calc/constants.dart';
 
 class Buttons extends StatelessWidget {
   final String title;
@@ -18,7 +19,7 @@ class Buttons extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: InkWell(
-          focusColor: Colors.black,
+          splashColor: bg,
           onTap: onPress,
           child: Container(
               height: 70,
