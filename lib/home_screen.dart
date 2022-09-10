@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: bg,
+        backgroundColor: bg_com,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -217,7 +217,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: '0',
                             n: num,
                             t: num_text,
-                            onPress: () {},
+                            onPress: () {
+                              userInput += '0';
+                              setState(() {});
+                            },
                           ),
                           Buttons(
                             title: '.',
