@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const GuiCalculator());
-}
-
-class GuiCalculator extends StatefulWidget {
-  const GuiCalculator({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<GuiCalculator> createState() => _GuiCalculatorState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _GuiCalculatorState extends State<GuiCalculator> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
