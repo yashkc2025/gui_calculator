@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-const Color op = Color.fromARGB(255, 193, 119, 9);
-const Color num = Color(0xFf86dc3d);
-const Color func = Color.fromARGB(255, 118, 100, 188);
+const Color op = Color.fromARGB(255, 142, 206, 235);
+const Color num = Color.fromARGB(255, 211, 244, 255);
+// const Color num = Colors.grey;
+// const Color func = Color.fromARGB(255, 118, 100, 188);
+const Color func = op;
 
-const Color num_text = Colors.black;
-const Color op_text = Colors.white;
-const Color func_text = Colors.white;
+const Color num_text = Color(0xff202D56);
+const Color op_text = Colors.black;
+const Color func_text = Colors.black;
