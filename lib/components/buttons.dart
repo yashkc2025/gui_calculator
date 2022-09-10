@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
-  const Buttons({super.key});
+  final String title;
+  final Color n;
+  final Color t;
 
+  const Buttons(
+      {Key? key, required this.title, required this.n, required this.t})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+    return Expanded(
       child: Container(
-          height: 50,
-          decoration: BoxDecoration(
-            color: Colors.pink,
-            borderRadius: BorderRadius.circular(50),
-          ),
-          child: const Center(
-              child: Text(
-            'hey',
-            style: TextStyle(fontSize: 18, color: Colors.white),
-          ))),
+          height: 60,
+          decoration: BoxDecoration(shape: BoxShape.circle, color: n),
+          child: Center(
+              child: Text(title, style: TextStyle(color: t, fontSize: 25)))),
     );
   }
 }
