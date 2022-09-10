@@ -214,11 +214,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           Buttons(
-                            title: '4',
-                            n: num,
-                            t: num_text,
+                            title: '^',
+                            n: op,
+                            t: op_text,
                             onPress: () {
-                              userInput += '4';
+                              userInput += ' ^ ';
                               setState(() {});
                             },
                           ),
@@ -246,7 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           Buttons(
-                            title: 'DEL',
+                            title: 'Del',
                             n: func,
                             t: func_text,
                             onPress: () {
@@ -257,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Buttons(
                             title: '=',
-                            n: func,
+                            n: Color.fromARGB(255, 149, 253, 154),
                             t: func_text,
                             onPress: () {
                               equalPress();
@@ -266,7 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                     ],
