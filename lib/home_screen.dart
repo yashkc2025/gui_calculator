@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gui_calc/components/buttons.dart';
-import 'package:gui_calc/constants.dart';
+import 'package:calculator/components/buttons.dart';
+import 'package:calculator/constants.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,36 +17,50 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: bg_com,
+        backgroundColor: bg,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 1),
             child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(
-                        userInput.toString(),
-                        style:
-                            const TextStyle(fontSize: 30, color: Colors.black),
-                      ),
-                      Text(
-                        ans.toString(),
-                        style:
-                            const TextStyle(fontSize: 30, color: Colors.black),
-                      ),
-                    ],
+                  flex: 1,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.blue[100],
+                        // border: Border.,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30))),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          userInput.toString(),
+                          style: const TextStyle(
+                              fontSize: 30, color: Colors.black),
+                        ),
+                        Text(
+                          ans.toString(),
+                          style: const TextStyle(
+                              fontSize: 30, color: Colors.black),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                Expanded(
-                  flex: 2,
+                const SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     children: [
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Buttons(
                             title: 'AC',
@@ -251,7 +265,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                         ],
-                      )
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
                     ],
                   ),
                 )

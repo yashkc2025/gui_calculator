@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gui_calc">
+    package="com.yashk.calculator">
    <application
-        android:label="gui_calc"
+        android:label="calculator"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

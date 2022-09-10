@@ -1,4 +1,4 @@
-package com.example.gui_calc
+package com.yashk.calculator
 
 import io.flutter.embedding.android.FlutterActivity
 

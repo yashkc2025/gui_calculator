@@ -1,4 +1,4 @@
-# gui_calc
+# calculator
 
 A new Flutter project.
 
