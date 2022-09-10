@@ -3,7 +3,7 @@
 A Calculator app to perform basic mathematical operations.
 
 # Screenshots
-<img src="https://user-images.githubusercontent.com/43927153/189498001-377d7f57-b75d-4548-b4ad-220cd9694135.jpg" width="200" height="400" />
+<img src="hhttps://user-images.githubusercontent.com/43927153/189501782-81fc7fca-132f-4756-934e-94e4798f0c4b.jpg" width="200" height="400" />
 
 # Downloads
 
