@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
-          children: [Buttons()],
+          children: [const Buttons(), const Buttons()],
         ),
       ),
     ));

@@ -5,15 +5,19 @@ class Buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 50,
-        decoration: BoxDecoration(
-          color: Colors.pink,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: const Center(
-            child: Text(
-          'hey',
-        )));
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Container(
+          height: 50,
+          decoration: BoxDecoration(
+            color: Colors.pink,
+            borderRadius: BorderRadius.circular(50),
+          ),
+          child: const Center(
+              child: Text(
+            'hey',
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ))),
+    );
   }
 }
