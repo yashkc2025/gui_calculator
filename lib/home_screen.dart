@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var userInput = '';
   var ans = '';
+  var disString = '';
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          userInput.toString(),
+                          disString.toString(),
                           style: const TextStyle(
                               fontSize: 30, color: Colors.black),
                         ),
@@ -69,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: func,
                             onPress: () {
                               userInput = ' ';
+                              disString = ' ';
                               ans = '';
                               setState(() {});
                             },
@@ -79,6 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: sec_text,
                             onPress: () {
                               userInput += "(";
+                              disString += "(";
                               setState(() {});
                             },
                           ),
@@ -88,6 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: sec_text,
                             onPress: () {
                               userInput += ")";
+                              disString += ")";
                               setState(() {});
                             },
                           ),
@@ -98,6 +102,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             onPress: () {
                               userInput =
                                   userInput.substring(0, userInput.length - 1);
+                              disString =
+                                  disString.substring(0, disString.length - 1);
                               setState(() {});
                             },
                           ),
@@ -112,7 +118,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             n: num,
                             t: num_text,
                             onPress: () {
-                              userInput = ' 3.1415 ';
+                              userInput += ' 3.1415 ';
+                              disString += ' π ';
                               ans = '';
                               setState(() {});
                             },
@@ -123,6 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += " ^ ";
+                              disString += " ^ ";
                               setState(() {});
                             },
                           ),
@@ -132,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += " % ";
+                              disString += " % ";
                               setState(() {});
                             },
                           ),
@@ -141,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += " / ";
+                              disString += " / ";
                               setState(() {});
                             },
                           ),
@@ -155,6 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '7';
+                              disString += '7';
                               setState(() {});
                             },
                           ),
@@ -164,6 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '8';
+                              disString += '8';
                               setState(() {});
                             },
                           ),
@@ -173,6 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '9';
+                              disString += '9';
                               setState(() {});
                             },
                           ),
@@ -182,6 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += ' * ';
+                              disString += ' x ';
                               setState(() {});
                             },
                           ),
@@ -196,6 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '4';
+                              disString += '4';
                               setState(() {});
                             },
                           ),
@@ -205,6 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '5';
+                              disString += '5';
                               setState(() {});
                             },
                           ),
@@ -214,6 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '6';
+                              disString += '6';
                               setState(() {});
                             },
                           ),
@@ -223,6 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += ' - ';
+                              disString += ' - ';
                               setState(() {});
                             },
                           ),
@@ -237,6 +255,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '1';
+                              disString += '1';
                               setState(() {});
                             },
                           ),
@@ -246,6 +265,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '2';
+                              disString += '2';
                               setState(() {});
                             },
                           ),
@@ -255,6 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '3';
+                              disString += '3';
                               setState(() {});
                             },
                           ),
@@ -264,6 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += ' + ';
+                              disString += ' + ';
                               setState(() {});
                             },
                           ),
@@ -278,6 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: num_text,
                             onPress: () {
                               userInput += '0';
+                              disString += '0';
                               setState(() {});
                             },
                           ),
@@ -287,6 +310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += '.';
+                              disString += '.';
                               setState(() {});
                             },
                           ),
@@ -296,6 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             t: op_text,
                             onPress: () {
                               userInput += ' ^2';
+                              disString += ' ^2';
                               setState(() {});
                             },
                           ),
