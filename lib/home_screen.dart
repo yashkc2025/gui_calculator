@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:calculator/components/buttons.dart';
 import 'package:calculator/constants.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'dart:math' as math;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -62,22 +63,66 @@ class _HomeScreenState extends State<HomeScreen> {
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         // crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Buttons(
+                          SecButtons(
                             title: 'AC',
-                            n: func,
-                            t: func_text,
+                            n: bg,
+                            t: func,
                             onPress: () {
                               userInput = ' ';
                               ans = '';
                               setState(() {});
                             },
                           ),
+                          SecButtons(
+                            title: '( ',
+                            n: sec,
+                            t: sec_text,
+                            onPress: () {
+                              userInput += "(";
+                              setState(() {});
+                            },
+                          ),
+                          SecButtons(
+                            title: ' )',
+                            n: sec,
+                            t: sec_text,
+                            onPress: () {
+                              userInput += ")";
+                              setState(() {});
+                            },
+                          ),
+                          SecButtons(
+                            title: '←',
+                            n: sec,
+                            t: func,
+                            onPress: () {
+                              userInput =
+                                  userInput.substring(0, userInput.length - 1);
+                              setState(() {});
+                            },
+                          ),
+                        ],
+                      ),
+                      Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
                           Buttons(
-                            title: '+',
+                            title: 'π',
+                            n: num,
+                            t: num_text,
+                            onPress: () {
+                              userInput = ' 3.1415 ';
+                              ans = '';
+                              setState(() {});
+                            },
+                          ),
+                          Buttons(
+                            title: '^',
                             n: op,
                             t: op_text,
                             onPress: () {
-                              userInput += " + ";
+                              userInput += " ^ ";
                               setState(() {});
                             },
                           ),
@@ -214,11 +259,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           Buttons(
-                            title: '^',
+                            title: '+',
                             n: op,
                             t: op_text,
                             onPress: () {
-                              userInput += ' ^ ';
+                              userInput += ' + ';
                               setState(() {});
                             },
                           ),
@@ -246,18 +291,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           Buttons(
-                            title: 'Del',
-                            n: func,
-                            t: func_text,
+                            title: 'x²',
+                            n: op,
+                            t: op_text,
                             onPress: () {
-                              userInput =
-                                  userInput.substring(0, userInput.length - 1);
+                              userInput += ' ^2';
                               setState(() {});
                             },
                           ),
                           Buttons(
                             title: '=',
-                            n: Color.fromARGB(255, 149, 253, 154),
+                            // n: Color.fromARGB(255, 149, 253, 154),
+                            n: sec_text,
                             t: func_text,
                             onPress: () {
                               equalPress();
@@ -266,9 +311,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 40,
-                      ),
+                      // const SizedBox(
+                      //   height: 40,
+                      // ),
                     ],
                   ),
                 )
